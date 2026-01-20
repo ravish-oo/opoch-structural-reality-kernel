@@ -100,11 +100,20 @@ class StandaloneSimulation:
         with open(solution_path, 'r') as f:
             solution = json.load(f)
 
-        # Assign paths to robots
-        for agent in solution['agents']:
-            robot_id = agent['id']
-            path = [tuple(p) for p in agent['path']]
-            self.robots[robot_id].path = path
+        # Assign paths to robots - handle different JSON formats
+        if 'agents' in solution:
+            # Old format: solution['agents'][i]['path']
+            for agent in solution['agents']:
+                robot_id = agent['id']
+                path = [tuple(p) for p in agent['path']]
+                self.robots[robot_id].path = path
+        elif 'paths' in solution:
+            # New format: solution['paths'][i]['waypoints']
+            for agent_path in solution['paths']:
+                robot_id = agent_path['agent_id']
+                # Extract grid coordinates from waypoints
+                path = [tuple(wp['grid']) for wp in agent_path['waypoints']]
+                self.robots[robot_id].path = path
 
         return solution
 
