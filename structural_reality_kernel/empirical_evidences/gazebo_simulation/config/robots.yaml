@@ -1,0 +1,122 @@
+# MAPF 12x12 Grid - 8 Robot Configuration
+# Generated from CBS solution with V1-V5 verification
+
+simulation:
+  name: "mapf_12x12_8agents"
+  grid_size: [12, 12]
+  cell_size: 0.5  # meters
+  world_size: [6.0, 6.0]  # meters
+  time_per_step: 2.0  # seconds per MAPF timestep
+
+robots:
+  - id: 0
+    name: "tb3_0"
+    model: "turtlebot3_burger"
+    color: [1.0, 0.42, 0.42]  # Red #FF6B6B
+    start:
+      grid: [0, 0]
+      world: [0.25, 0.25, 0.0]
+      theta: 0.785  # 45 degrees (toward goal)
+    goal:
+      grid: [11, 11]
+      world: [5.75, 5.75, 0.0]
+
+  - id: 1
+    name: "tb3_1"
+    model: "turtlebot3_burger"
+    color: [0.31, 0.80, 0.77]  # Teal #4ECDC4
+    start:
+      grid: [11, 0]
+      world: [5.75, 0.25, 0.0]
+      theta: 2.356  # 135 degrees
+    goal:
+      grid: [0, 11]
+      world: [0.25, 5.75, 0.0]
+
+  - id: 2
+    name: "tb3_2"
+    model: "turtlebot3_burger"
+    color: [0.27, 0.72, 0.82]  # Blue #45B7D1
+    start:
+      grid: [0, 11]
+      world: [0.25, 5.75, 0.0]
+      theta: -0.785  # -45 degrees
+    goal:
+      grid: [11, 0]
+      world: [5.75, 0.25, 0.0]
+
+  - id: 3
+    name: "tb3_3"
+    model: "turtlebot3_burger"
+    color: [0.59, 0.81, 0.71]  # Green #96CEB4
+    start:
+      grid: [11, 11]
+      world: [5.75, 5.75, 0.0]
+      theta: -2.356  # -135 degrees
+    goal:
+      grid: [0, 0]
+      world: [0.25, 0.25, 0.0]
+
+  - id: 4
+    name: "tb3_4"
+    model: "turtlebot3_burger"
+    color: [1.0, 0.92, 0.65]  # Yellow #FFEAA7
+    start:
+      grid: [5, 0]
+      world: [2.75, 0.25, 0.0]
+      theta: 1.571  # 90 degrees (up)
+    goal:
+      grid: [6, 11]
+      world: [3.25, 5.75, 0.0]
+
+  - id: 5
+    name: "tb3_5"
+    model: "turtlebot3_burger"
+    color: [0.87, 0.63, 0.87]  # Plum #DDA0DD
+    start:
+      grid: [6, 0]
+      world: [3.25, 0.25, 0.0]
+      theta: 1.571  # 90 degrees
+    goal:
+      grid: [5, 11]
+      world: [2.75, 5.75, 0.0]
+
+  - id: 6
+    name: "tb3_6"
+    model: "turtlebot3_burger"
+    color: [0.60, 0.85, 0.78]  # Mint #98D8C8
+    start:
+      grid: [5, 11]
+      world: [2.75, 5.75, 0.0]
+      theta: -1.571  # -90 degrees (down)
+    goal:
+      grid: [6, 0]
+      world: [3.25, 0.25, 0.0]
+
+  - id: 7
+    name: "tb3_7"
+    model: "turtlebot3_burger"
+    color: [0.97, 0.86, 0.44]  # Gold #F7DC6F
+    start:
+      grid: [6, 11]
+      world: [3.25, 5.75, 0.0]
+      theta: -1.571  # -90 degrees
+    goal:
+      grid: [5, 0]
+      world: [2.75, 0.25, 0.0]
+
+# CBS Solution Statistics
+solution:
+  status: "UNIQUE"
+  makespan: 22
+  sum_of_costs: 136
+  nodes_expanded: 2516
+  naive_space: 1.85e17
+  compression_log10: 13.9
+  verified: true
+  verification:
+    V1_start: true
+    V2_goal: true
+    V3_dynamics: true
+    V4_vertex_conflict: true
+    V5_edge_conflict: true
