@@ -1,0 +1,159 @@
+{
+  "title": "Theorem Generator = Universe Engine: UNIQUE + WITNESS Verification",
+  "demos": {
+    "canonical_form": {
+      "demo": "Canonical Normal Form",
+      "lhs_input": "(x + y)",
+      "rhs_input": "(y + x)",
+      "lhs_canonical": "(x + y)",
+      "rhs_canonical": "(x + y)",
+      "canonical_match": true,
+      "interpretation": "\u03a0 erases representation slack (commutativity)",
+      "receipt_sha256": "f5bf0b27fdeb631f81fe6c2b336aac1c88f439ae3b06a7144e14ac2a589995bc"
+    },
+    "self_improvement": {
+      "demo": "Self-Improving Theorem Generation",
+      "lemmas_generated": 4,
+      "pi_collapsed_by_canonicalization": 4,
+      "omega_frontiers": 0,
+      "total_rules": 3,
+      "monotone_improvement": true,
+      "lemma_samples": [
+        {
+          "claim": "(x + y) = (y + x)",
+          "result": "\u03a0-COLLAPSED"
+        },
+        {
+          "claim": "(x * y) = (y * x)",
+          "result": "\u03a0-COLLAPSED"
+        },
+        {
+          "claim": "(x + (y + x)) = ((x + y) + x)",
+          "result": "\u03a0-COLLAPSED"
+        },
+        {
+          "claim": "(x * (y * x)) = ((x * y) * x)",
+          "result": "\u03a0-COLLAPSED"
+        }
+      ],
+      "interpretation": "\u03a0-collapse = self-improvement in action (equalities absorbed into canonicalization)",
+      "receipt_sha256": "b4a558b2f1bd9b3799ec47f6f7f839fbe8793f0e9ed712fd852c3239907ef09e"
+    },
+    "observer_closure": {
+      "demo": "Observer Closure: \ud835\udcdd\u2218Q = Q\u2218\ud835\udcdd",
+      "state_before_fingerprint": "60eb1fe3282ae8645bd3011d3b92a4c874f034d38986bcf415e8867877cf5b9c",
+      "NQ_fingerprint": "3e6b1a188f91f45cdf33acfc68183b64238a9b2a9dd3fb23ded4b44ba6a37d63",
+      "QN_fingerprint": "3e6b1a188f91f45cdf33acfc68183b64238a9b2a9dd3fb23ded4b44ba6a37d63",
+      "commutes": true,
+      "interpretation": "No hidden channel",
+      "receipt_sha256": "08a7fbe47a2b4acf75b2360abe7e7f33f583807034e514e341b76092d12725ce"
+    },
+    "big_bang_now": {
+      "demo": "Big Bang \u2192 Now Reconstruction",
+      "L_now_size": 5,
+      "H_star_events": 7,
+      "T_history": 7,
+      "code_len": 53,
+      "total_cost": 60,
+      "topology": [
+        "e0_big_bang",
+        "e1_test_suite",
+        "e2_lemma",
+        "e3_lemma",
+        "e4_lemma",
+        "e5_lemma",
+        "e6_lemma"
+      ],
+      "event_poset": {
+        "e0_big_bang": {
+          "depends_on": [],
+          "description": "\u22a5 \u2192 finite carrier D* established"
+        },
+        "e1_test_suite": {
+          "depends_on": [
+            "e0_big_bang"
+          ],
+          "description": "\u0394(T) = modular evaluation over [2, 3, 5]"
+        },
+        "e2_lemma": {
+          "depends_on": [
+            "e0_big_bang",
+            "e1_test_suite"
+          ],
+          "description": "Verified: x + 0 = x = PASS"
+        },
+        "e3_lemma": {
+          "depends_on": [
+            "e0_big_bang",
+            "e1_test_suite"
+          ],
+          "description": "Verified: x * 1 = x = PASS"
+        },
+        "e4_lemma": {
+          "depends_on": [
+            "e0_big_bang",
+            "e1_test_suite"
+          ],
+          "description": "Verified: x * 0 = 0 = PASS"
+        },
+        "e5_lemma": {
+          "depends_on": [
+            "e0_big_bang",
+            "e1_test_suite"
+          ],
+          "description": "Verified: x + y = y + x = PASS"
+        },
+        "e6_lemma": {
+          "depends_on": [
+            "e0_big_bang",
+            "e1_test_suite"
+          ],
+          "description": "Verified: x * y = y * x = PASS"
+        }
+      },
+      "interpretation": "Minimal consistent generative explanation of present ledger",
+      "receipt_sha256": "345eed6a899cac6efee756be1fd08d1f46ae2ff4b8972ee4406e98461ebe0bef"
+    },
+    "boundary_flow": {
+      "subsystem_id": "theorem_generator",
+      "env_id": "universe",
+      "records_in_count": 1,
+      "records_out_count": 1,
+      "delta_T_S": -1.0,
+      "delta_T_env": 2.0,
+      "total_delta_T": 1.0,
+      "conservation_satisfied": true,
+      "demo": "Boundary Flow Conservation",
+      "conservation_message": "Conservation OK: \u0394T_S=-1.0, \u0394T_env=2.0, total=1.0",
+      "interpretation": "Local growth via exported irreversibility",
+      "receipt_sha256": "ac0ef2848d1fd982028cef08f56baba7207afd766dc5eb93427e854051e1031d"
+    },
+    "bellman_selection": {
+      "demo": "Bellman Minimax \u03c4* Selection",
+      "candidates_count": 3,
+      "best_candidate": null,
+      "bellman_score": Infinity,
+      "selection_reason": "",
+      "interpretation": "Minimize worst-case cost, maximize quotient collapse",
+      "receipt_sha256": "b28a37d34eb6e88689caf84567689dc7bc6c492ca2f4f4d56179f3a3e6517b6c"
+    },
+    "omega_frontier": {
+      "demo": "\u03a9 Frontier Certificate",
+      "claim": "(x + 1) = x",
+      "verified": false,
+      "result": "\u03a9",
+      "counterexample": {
+        "mod": 2,
+        "assignment": {
+          "x": 0
+        },
+        "lhs_val": 1,
+        "rhs_val": 0
+      },
+      "interpretation": "Minimal separator found: claim refuted",
+      "receipt_sha256": "cf084cb670edf831dd750eeba70f8606931b1f8266b8aac0b6a137276c916dd2"
+    }
+  },
+  "all_demos_pass": true,
+  "receipt_sha256": "ef7f3b239380c2e302970928106f8459b509a2424f11067ce27ab772873bcfd7"
+}

@@ -1,0 +1,23 @@
+# Supabase functions
+.env
+.env.local
+
+# Deno
+deno.lock
+
+# Testing
+coverage/
+*.test.ts
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log

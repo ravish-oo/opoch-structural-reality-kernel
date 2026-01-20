@@ -1,0 +1,201 @@
+{
+  "receipt_sha256": "a5543385427b10378c19ef43663debec98d40ec3b8d1c604df2c078d8f740aad",
+  "runs": {
+    "budget_limited": {
+      "budget_B0": 3,
+      "demo": "Proper self-improvement: \u03a9 \u2192 apply executable \u03c4* \u2192 new record \u2192 \u03a0-closure \u2192 repeat",
+      "final": {
+        "T_spent": 3,
+        "decided": false,
+        "remaining_family_size": 32,
+        "x_identified": null
+      },
+      "receipt_sha256": "715ce2e76524c0da3996fda3c9a8464ab8097bc7269e73e7ac76cb04d284c670",
+      "steps": [
+        {
+          "T_before": 0,
+          "W_size_before": 256,
+          "chosen_test": "bit_0",
+          "cost": 1,
+          "outcome": 1,
+          "split_sizes": {
+            "0": 128,
+            "1": 128
+          },
+          "step": 0
+        },
+        {
+          "T_before": 1,
+          "W_size_before": 128,
+          "chosen_test": "bit_1",
+          "cost": 1,
+          "outcome": 0,
+          "split_sizes": {
+            "0": 64,
+            "1": 64
+          },
+          "step": 1
+        },
+        {
+          "T_before": 2,
+          "W_size_before": 64,
+          "chosen_test": "bit_2",
+          "cost": 1,
+          "outcome": 1,
+          "split_sizes": {
+            "0": 32,
+            "1": 32
+          },
+          "step": 2
+        },
+        {
+          "T_before": 3,
+          "W_size_before": 32,
+          "chosen_test": null,
+          "note": "BUDGET EXHAUSTED (\u03a9 boundary)",
+          "outcome": null,
+          "step": 3
+        }
+      ],
+      "verifier": {
+        "PASS": true,
+        "final_W_size": 32,
+        "final_x": null,
+        "reason": null,
+        "true_x": 173
+      }
+    },
+    "full_budget": {
+      "budget_B0": 8,
+      "demo": "Proper self-improvement: \u03a9 \u2192 apply executable \u03c4* \u2192 new record \u2192 \u03a0-closure \u2192 repeat",
+      "final": {
+        "T_spent": 8,
+        "decided": true,
+        "remaining_family_size": 1,
+        "x_identified": 173
+      },
+      "receipt_sha256": "94c6195c6f551627a2dcbaa3dfa6c47cd0c6293e7d3cbaac76f240b6b89e3b0f",
+      "steps": [
+        {
+          "T_before": 0,
+          "W_size_before": 256,
+          "chosen_test": "bit_0",
+          "cost": 1,
+          "outcome": 1,
+          "split_sizes": {
+            "0": 128,
+            "1": 128
+          },
+          "step": 0
+        },
+        {
+          "T_before": 1,
+          "W_size_before": 128,
+          "chosen_test": "bit_1",
+          "cost": 1,
+          "outcome": 0,
+          "split_sizes": {
+            "0": 64,
+            "1": 64
+          },
+          "step": 1
+        },
+        {
+          "T_before": 2,
+          "W_size_before": 64,
+          "chosen_test": "bit_2",
+          "cost": 1,
+          "outcome": 1,
+          "split_sizes": {
+            "0": 32,
+            "1": 32
+          },
+          "step": 2
+        },
+        {
+          "T_before": 3,
+          "W_size_before": 32,
+          "chosen_test": "bit_3",
+          "cost": 1,
+          "outcome": 1,
+          "split_sizes": {
+            "0": 16,
+            "1": 16
+          },
+          "step": 3
+        },
+        {
+          "T_before": 4,
+          "W_size_before": 16,
+          "chosen_test": "bit_4",
+          "cost": 1,
+          "outcome": 0,
+          "split_sizes": {
+            "0": 8,
+            "1": 8
+          },
+          "step": 4
+        },
+        {
+          "T_before": 5,
+          "W_size_before": 8,
+          "chosen_test": "bit_5",
+          "cost": 1,
+          "outcome": 1,
+          "split_sizes": {
+            "0": 4,
+            "1": 4
+          },
+          "step": 5
+        },
+        {
+          "T_before": 6,
+          "W_size_before": 4,
+          "chosen_test": "bit_6",
+          "cost": 1,
+          "outcome": 0,
+          "split_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "step": 6
+        },
+        {
+          "T_before": 7,
+          "W_size_before": 2,
+          "chosen_test": "bit_7",
+          "cost": 1,
+          "outcome": 1,
+          "split_sizes": {
+            "0": 1,
+            "1": 1
+          },
+          "step": 7
+        },
+        {
+          "T_before": 8,
+          "W_size_before": 1,
+          "chosen_test": null,
+          "note": "UNIQUE reached",
+          "outcome": null,
+          "step": 8
+        }
+      ],
+      "verifier": {
+        "PASS": true,
+        "final_W_size": 1,
+        "final_x": 173,
+        "reason": null,
+        "true_x": 173
+      }
+    }
+  },
+  "title": "Kernel self-improvement demo: canonical \u03c4* executed each step",
+  "world": {
+    "domain_size": 256,
+    "hidden_true_x": {
+      "hidden": true,
+      "revealed": 173
+    }
+  }
+}

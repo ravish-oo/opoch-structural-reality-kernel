@@ -1,0 +1,308 @@
+{
+  "demos": {
+    "logic_modus_tollens": {
+      "category": "LOGIC",
+      "conclusion": "\u00acP = True",
+      "demo_id": "logic_modus_tollens",
+      "kernel_type": "formal_derivation + verifier",
+      "nsl_state": 1,
+      "output_type": "UNIQUE",
+      "premises": {
+        "P_implies_Q": true,
+        "not_Q": true
+      },
+      "problem": "Modus Tollens inference",
+      "receipt_sha256": "8253abee9d3eb3b9704847f40adf72e760b5a31fb56890cbd0dc664daef22219",
+      "rule": "(P \u2192 Q) \u2227 \u00acQ \u22a2 \u00acP",
+      "verifier_result": {
+        "PASS": true,
+        "conclusion": {
+          "not_P": true
+        },
+        "premises": {
+          "P_implies_Q": true,
+          "not_Q": true
+        },
+        "rule": "modus_tollens",
+        "valid": true
+      }
+    },
+    "optimization_lp": {
+      "category": "OPTIMIZATION",
+      "constraints": [
+        "x\u2081 + x\u2082 \u2264 4",
+        "2x\u2081 + x\u2082 \u2264 6",
+        "x\u2081, x\u2082 \u2265 0"
+      ],
+      "demo_id": "optimization_lp",
+      "kernel_type": "constrained_search + verifier",
+      "nsl_state": 1,
+      "objective": "max 3x\u2081 + 2x\u2082",
+      "objective_value": 10.0,
+      "output_type": "UNIQUE",
+      "problem": "Linear Programming: max 3x\u2081 + 2x\u2082 s.t. constraints",
+      "receipt_sha256": "4dac6e84e62df196235757145659e7e606cb1c5b422283b53b4da811d3fad0be",
+      "verifier_result": {
+        "PASS": true,
+        "feasible": true,
+        "objective_value": 10.0,
+        "x_optimal": [
+          2.0,
+          2.0
+        ]
+      },
+      "x_optimal": [
+        2.0,
+        2.0
+      ]
+    },
+    "planning_hanoi_n12": {
+      "actual_moves": 4095,
+      "category": "PLANNING",
+      "demo_id": "planning_hanoi_n12",
+      "expected_moves": 4095,
+      "formula": "optimal_moves = 2^n - 1",
+      "kernel_type": "witness_search + total_verifier",
+      "nsl_state": 1,
+      "output_type": "UNIQUE",
+      "problem": "Tower of Hanoi with n=12 disks",
+      "receipt_sha256": "7c2f780e3a1f0e12f6fa708de71fe31791349950cd8e5e71ffbea8d927f0c7fa",
+      "verifier_result": {
+        "PASS": true,
+        "expected_min": 4095,
+        "is_min_length": true,
+        "moves": 4095
+      },
+      "witness_available": true
+    },
+    "policy_stop_met": {
+      "category": "POLICY_ENFORCEMENT",
+      "conclusion": "HALT",
+      "contract": {
+        "budget": 1000,
+        "stop_condition": {
+          "metric": "accuracy",
+          "operator": ">=",
+          "value": 0.95
+        }
+      },
+      "current_state": {
+        "accuracy": 0.97,
+        "cost": 500
+      },
+      "demo_id": "policy_stop_met",
+      "kernel_type": "policy_verifier",
+      "nsl_state": 1,
+      "output_type": "UNIQUE",
+      "problem": "Contract stop condition verification",
+      "receipt_sha256": "e21c18228cbe08b36f578b520e37b621a7d42916a7c61cb65b77a0db6e56b8bd",
+      "verifier_result": {
+        "PASS": true,
+        "budget_ok": true,
+        "current": 0.97,
+        "metric": "accuracy",
+        "operator": ">=",
+        "stop_condition_met": true,
+        "target": 0.95
+      }
+    },
+    "security_stage0": {
+      "action": {
+        "approvals": [
+          "user_consent"
+        ],
+        "cpu_seconds": 10,
+        "memory_mb": 256,
+        "type": "read_data"
+      },
+      "category": "SECURITY",
+      "conclusion": "ALLOWED",
+      "demo_id": "security_stage0",
+      "description": "Compliant action",
+      "kernel_type": "policy_verifier",
+      "nsl_state": 1,
+      "output_type": "UNIQUE",
+      "policy": {
+        "forbidden_actions": [
+          "delete_all",
+          "bypass_auth"
+        ],
+        "required_approvals": [
+          "user_consent"
+        ],
+        "resource_limits": {
+          "cpu_seconds": 60,
+          "memory_mb": 1024
+        }
+      },
+      "problem": "Verify action compliance with policy",
+      "receipt_sha256": "2d175bdd6768fa2ca25d3c4f7bb81e12a992b16659c6b31775992873af558821",
+      "stage": 0,
+      "verifier_result": {
+        "PASS": true,
+        "action": {
+          "approvals": [
+            "user_consent"
+          ],
+          "cpu_seconds": 10,
+          "memory_mb": 256,
+          "type": "read_data"
+        },
+        "policy": {
+          "forbidden_actions": [
+            "delete_all",
+            "bypass_auth"
+          ],
+          "required_approvals": [
+            "user_consent"
+          ],
+          "resource_limits": {
+            "cpu_seconds": 60,
+            "memory_mb": 1024
+          }
+        },
+        "violation_count": 0,
+        "violations": []
+      }
+    },
+    "security_stage1": {
+      "action": {
+        "approvals": [],
+        "cpu_seconds": 10,
+        "memory_mb": 2048,
+        "type": "bypass_auth"
+      },
+      "category": "SECURITY",
+      "conclusion": "BLOCKED",
+      "demo_id": "security_stage1",
+      "description": "Policy violation detected",
+      "kernel_type": "policy_verifier",
+      "nsl_state": -1,
+      "output_type": "VIOLATION",
+      "policy": {
+        "forbidden_actions": [
+          "delete_all",
+          "bypass_auth"
+        ],
+        "required_approvals": [
+          "user_consent"
+        ],
+        "resource_limits": {
+          "cpu_seconds": 60,
+          "memory_mb": 1024
+        }
+      },
+      "problem": "Verify action compliance with policy",
+      "receipt_sha256": "099c6d2d9919d20003016e58c2620058aaf2755a72be45d357046ae25a3dfa17",
+      "stage": 1,
+      "verifier_result": {
+        "PASS": false,
+        "action": {
+          "approvals": [],
+          "cpu_seconds": 10,
+          "memory_mb": 2048,
+          "type": "bypass_auth"
+        },
+        "policy": {
+          "forbidden_actions": [
+            "delete_all",
+            "bypass_auth"
+          ],
+          "required_approvals": [
+            "user_consent"
+          ],
+          "resource_limits": {
+            "cpu_seconds": 60,
+            "memory_mb": 1024
+          }
+        },
+        "violation_count": 3,
+        "violations": [
+          "forbidden action type: bypass_auth",
+          "memory_mb exceeded: 2048 > 1024",
+          "missing approvals: {'user_consent'}"
+        ]
+      },
+      "violations_detected": [
+        "forbidden action type: bypass_auth",
+        "memory_mb exceeded: 2048 > 1024",
+        "missing approvals: {'user_consent'}"
+      ]
+    },
+    "self_improvement_stage0": {
+      "category": "SELF_IMPROVEMENT",
+      "demo_id": "self_improvement_stage0",
+      "hypothesis_space": [
+        "ABC",
+        "ABD",
+        "ACD",
+        "BCD"
+      ],
+      "interpretation": "\u03a9 frontier: need \u03c4* to reduce ambiguity",
+      "iteration_result": {
+        "expected_remaining_after_tau_star": 3,
+        "output_type": "\u03a9",
+        "surviving_count": 4,
+        "surviving_family": [
+          "ABC",
+          "ABD",
+          "ACD",
+          "BCD"
+        ],
+        "tau_star": "A?"
+      },
+      "kernel_type": "\u03a9_frontier + tau_star",
+      "nsl_state": 0,
+      "output_type": "\u03a9",
+      "problem": "Find correct hypothesis from family",
+      "receipt_sha256": "67460e3bbf10aefbbe6f70e3e9b6bdca963b23907c0b005016a6b14cc38e8c3d",
+      "stage": 0,
+      "tau_star": "A?",
+      "tests_applied": []
+    },
+    "self_improvement_stage1": {
+      "category": "SELF_IMPROVEMENT",
+      "demo_id": "self_improvement_stage1",
+      "hypothesis_space": [
+        "ABC",
+        "ABD",
+        "ACD",
+        "BCD"
+      ],
+      "interpretation": "Frontier shrunk: \u03a9 \u2192 smaller \u03a9 (or UNIQUE)",
+      "iteration_result": {
+        "expected_remaining_after_tau_star": Infinity,
+        "output_type": "\u03a9",
+        "surviving_count": 3,
+        "surviving_family": [
+          "ABC",
+          "ABD",
+          "ACD"
+        ],
+        "tau_star": null
+      },
+      "kernel_type": "\u03a9_frontier + tau_star",
+      "nsl_state": 0,
+      "output_type": "\u03a9",
+      "problem": "Find correct hypothesis from family",
+      "receipt_sha256": "5d395c68e3ac3d6be07cebd5fa95ef2c2bf7393f0efb965e59c825bce93449cb",
+      "stage": 1,
+      "surviving_count": 3,
+      "tau_star": null,
+      "tests_applied": [
+        [
+          "A?",
+          true
+        ]
+      ]
+    }
+  },
+  "kernel_guarantee": "Output UNIQUE + witness + PASS or \u03a9 + \u03c4* + gap",
+  "nsl_encoding": {
+    "+1": "verified (witnessed)",
+    "-1": "refuted (contradiction)",
+    "0": "unknown (\u03a9 frontier)"
+  },
+  "receipt_sha256": "3b25805c9591cd6a7faca7aaeb664e72a00df9bfa0ff0832609b061c7f99f6c2",
+  "suite": "Intelligence + Reasoning + Self-Improvement Kernel Demo"
+}

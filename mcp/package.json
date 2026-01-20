@@ -1,0 +1,30 @@
+{
+  "name": "opoch-supabase-mcp",
+  "version": "1.0.0",
+  "description": "Supabase MCP server for Opoch project",
+  "type": "module",
+  "main": "dist/supabase-mcp.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/supabase-mcp.js",
+    "dev": "tsx supabase-mcp.ts",
+    "test": "tsx test-connection.ts",
+    "build:github": "tsc github-mcp.ts --outDir dist",
+    "start:github": "node dist/github-mcp.js",
+    "dev:github": "tsx github-mcp.ts"
+  },
+  "dependencies": {
+    "@cyanheads/git-mcp-server": "^2.3.2",
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "@octokit/rest": "^22.0.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "axios": "^1.6.0",
+    "dotenv": "^17.2.1",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}

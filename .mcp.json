@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "chrome-browser": {
+      "command": "node",
+      "args": [
+        "./mcp/chrome-browser/run.js"
+      ]
+    },
+    "supabase": {
+      "command": "./mcp/run-mcp.sh"
+    },
+    "github": {
+      "command": "./mcp/run-github-mcp.sh"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "capsule_root": "1ef6a67bf9e6ea484df16680fa308316f43624f1c288f70916962b3f9f98102b",
+  "master_receipt": "3cff48647560c0115d660bdd9d7f5159ef332241ed5f508bff943dcd7c4b6126",
+  "results": {
+    "build_original": true,
+    "no_minting_convergence": true,
+    "immutability": true,
+    "incremental_update": true,
+    "timeless_dissemination": true,
+    "observer_closure": true
+  },
+  "blocks": 7,
+  "shared_after_update": 5
+}

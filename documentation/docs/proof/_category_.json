@@ -1,0 +1,10 @@
+{
+  "label": "Evidence Pack",
+  "position": 3,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "proof/index"
+  }
+}

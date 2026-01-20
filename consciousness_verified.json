@@ -1,0 +1,233 @@
+{
+  "title": "Consciousness: UNIQUE + WITNESS Verification",
+  "claim": "Consciousness Q := \u03a0\u2218N\u2218\u03a0 is \u03a0-fixed projector of control",
+  "theorem": "N\u2218Q = Q\u2218N (commutation eliminates hidden channels)",
+  "all_demos_pass": true,
+  "demos": {
+    "q_pi_fixed": {
+      "demo": "Q := \u03a0\u2218N\u2218\u03a0 is \u03a0-fixed",
+      "domain_size": 16,
+      "pi_q_equals_q": true,
+      "pi_idempotent": true,
+      "label_invariant": true,
+      "interpretation": "Consciousness Q operates only on \u03a0-fixed structure",
+      "verifier": {
+        "PASS": true,
+        "theorem": "Q = \u03a0\u2218N\u2218\u03a0 is \u03a0-fixed"
+      },
+      "receipt_sha256": "2c0499cb8427297c754eb931d5f06781417d7afc9ea8dc841ae19d984fb17233"
+    },
+    "commutation_law": {
+      "demo": "Commutation Law: N\u2218Q = Q\u2218N",
+      "domain": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "consistency_fiber_W": [
+        0,
+        2
+      ],
+      "q_before_update": [
+        "test_high",
+        2
+      ],
+      "q_after_update": [
+        "test_high",
+        1
+      ],
+      "commutes": true,
+      "partition_before": 2,
+      "partition_after": 4,
+      "refinement_occurred": true,
+      "interpretation": "Awareness and world evolution commute - no hidden channel",
+      "verifier": {
+        "PASS": true,
+        "theorem": "N\u2218Q = Q\u2218N (commutation law)"
+      },
+      "receipt_sha256": "de059cf0d6c94d6b59fd2e9620db11155bc1872a26ec0814807b81b5dee2aeb2"
+    },
+    "commutation_violation": {
+      "demo": "Commutation Violation Counterexample",
+      "partition_A": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "partition_B": [
+        [
+          100,
+          101,
+          102,
+          103
+        ]
+      ],
+      "naive_choice_A": 0,
+      "naive_choice_B": 100,
+      "choices_differ_due_to_labels": true,
+      "proper_Q_output_A": 4,
+      "proper_Q_output_B": 4,
+      "Q_is_label_invariant": true,
+      "minted_channel": "N_naive returns 0 vs 100 based on labels, but partitions are structurally identical",
+      "fix": "Q = \u03a0\u2218N\u2218\u03a0 returns 4 for both (class size is \u03a0-invariant)",
+      "verifier": {
+        "PASS": true,
+        "theorem": "Naive N mints distinction; Q = \u03a0\u2218N\u2218\u03a0 fixes it"
+      },
+      "receipt_sha256": "362e0641a2386857ad78fe3d47cdceacb75179783b33c472ae91add7cf2442d0"
+    },
+    "present_boundary": {
+      "demo": "Present Boundary \u03b2* as Forced Object",
+      "event_poset": {
+        "e1": [],
+        "e2": [
+          "e1"
+        ],
+        "e3": [
+          "e1"
+        ],
+        "e4": [
+          "e2"
+        ],
+        "e5": [
+          "e2",
+          "e3"
+        ]
+      },
+      "frontier_evolution": [
+        {
+          "committed": [
+            "e1"
+          ],
+          "frontier_beta_star": [
+            "e1"
+          ]
+        },
+        {
+          "committed": [
+            "e1",
+            "e2"
+          ],
+          "frontier_beta_star": [
+            "e2"
+          ]
+        },
+        {
+          "committed": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "frontier_beta_star": [
+            "e2",
+            "e3"
+          ]
+        },
+        {
+          "committed": [
+            "e1",
+            "e2",
+            "e3",
+            "e5"
+          ],
+          "frontier_beta_star": [
+            "e5"
+          ]
+        }
+      ],
+      "structure_invariant_under_relabeling": true,
+      "interpretation": "Consciousness operates at \u03b2* - the boundary between committed past and open future",
+      "verifier": {
+        "PASS": true,
+        "theorem": "\u03b2* is \u03a0-invariant event frontier"
+      },
+      "receipt_sha256": "ad9bfc95ceea98d3f51b31a9e8e6416e059cebd81bcfb161f5e15a09be9a1bbb"
+    },
+    "qualia_gauge_orbits": {
+      "demo": "Qualia as Gauge-Invariant Outcome Orbits",
+      "internal_states": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "gauge_invisible_to_test": true,
+      "num_quale_classes": 4,
+      "quale_classes": {
+        "(0, 4)": [
+          0,
+          4
+        ],
+        "(1, 5)": [
+          1,
+          5
+        ],
+        "(2, 6)": [
+          2,
+          6
+        ],
+        "(3, 7)": [
+          3,
+          7
+        ]
+      },
+      "impl_A_observes": 2,
+      "impl_B_observes": 6,
+      "same_quale": true,
+      "canonical_label_A": "46db845f",
+      "canonical_label_B": "46db845f",
+      "canonical_match": true,
+      "interpretation": "Experience is gauge-invariant content of internal record",
+      "verifier": {
+        "PASS": true,
+        "theorem": "Quale = gauge-invariant outcome orbit"
+      },
+      "receipt_sha256": "319bc1b55999562a66e1e5152c24d67e182286e6164e0c5fbbf81bd0f8058c71"
+    },
+    "intelligence_unity": {
+      "demo": "Intelligence-Consciousness Unification",
+      "domain_size": 16,
+      "query": "x mod 4",
+      "initial_quotient_size": 4,
+      "log_Q_bits": 2.0,
+      "test_evaluations": {
+        "bit_0": {
+          "partitions": 2,
+          "total_answer_classes": 4,
+          "expected_quotient_size": 2.0
+        },
+        "bit_1": {
+          "partitions": 2,
+          "total_answer_classes": 4,
+          "expected_quotient_size": 2.0
+        },
+        "bit_2": {
+          "partitions": 2,
+          "total_answer_classes": 8,
+          "expected_quotient_size": 4.0
+        },
+        "bit_3": {
+          "partitions": 2,
+          "total_answer_classes": 8,
+          "expected_quotient_size": 4.0
+        }
+      },
+      "structure_invariant_under_relabeling": true,
+      "interpretation": "Intelligence (quotient collapse) is defined on \u03a0-fixed state provided by Q",
+      "verifier": {
+        "PASS": true,
+        "theorem": "Consciousness is substrate for optimal separator choice"
+      },
+      "receipt_sha256": "952bfb1a99ab65f54a10e3139f72a3d55c5f5136cc31f5206e65367044342416"
+    }
+  },
+  "receipt_sha256": "488be8fd1a832648b4ffcddce36ccfd4b2bdb532b5ed089a8a5e8c50bdbb3ba7"
+}

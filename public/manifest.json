@@ -1,0 +1,21 @@
+{
+  "name": "Opoch - The Age of Truth. Theory of Everything.",
+  "short_name": "Opoch",
+  "description": "The Theory of Everything is here. Quantum gravity. Consciousness. Arrow of time. All solved, all verified.",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["business", "productivity", "developer"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

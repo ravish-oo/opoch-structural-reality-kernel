@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "/Users/dharamveerchouhan/Downloads/opoch/mcp/run-mcp.sh"
+    },
+    "linear": {
+      "command": "/Users/dharamveerchouhan/Downloads/opoch/mcp/run-linear-mcp.sh"
+    }
+  }
+}

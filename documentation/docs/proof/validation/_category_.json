@@ -1,0 +1,10 @@
+{
+  "label": "Validation",
+  "position": 3,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "The Proofs: Benchmarks, Demos, and Applications."
+  }
+}
