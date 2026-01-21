@@ -50,3 +50,9 @@ htmlcov/
 # Temporary files
 *.tmp
 *.temp
+
+# Output directory
+out/
+
+# Large simulation files (keep optimized version only)
+*_8agent_simulation.gif
