@@ -19,7 +19,7 @@ import json
 import time
 import statistics
 
-from .mapf_model import (
+from ..model import (
     Graph,
     MAPFInstance,
     MAPFResult,
@@ -27,10 +27,10 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_cbs import cbs_solve, CBSSolver
-from .mapf_verifier import verify_paths, MAPFVerifier
-from .mapf_ilp import ilp_feasibility_check, cross_check_cbs_ilp
-from .mapf_movingai import (
+from ..cbs import cbs_solve, CBSSolver
+from ..verifier import verify_paths, MAPFVerifier
+from ..ilp import ilp_feasibility_check, cross_check_cbs_ilp
+from .movingai import (
     MovingAIMap,
     MovingAIScenario,
     MovingAIBenchmarkLoader,
@@ -38,7 +38,7 @@ from .mapf_movingai import (
     create_test_scenario,
     get_standard_test_maps
 )
-from .mapf_planviz import PlanVizExporter, export_to_planviz
+from ..planviz import PlanVizExporter, export_to_planviz
 
 
 # ============================================================

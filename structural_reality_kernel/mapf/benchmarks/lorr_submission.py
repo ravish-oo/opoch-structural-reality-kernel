@@ -23,16 +23,16 @@ import time
 import hashlib
 from datetime import datetime
 
-from .mapf_model import (
+from ..model import (
     MAPFInstance,
     MAPFResult,
     ResultStatus,
     H,
     canon_json
 )
-from .mapf_cbs import cbs_solve
-from .mapf_verifier import verify_paths
-from .mapf_lorr import (
+from ..cbs import cbs_solve
+from ..verifier import verify_paths
+from .lorr import (
     LoRRProblem,
     LoRRSolution,
     LoRRTask,
@@ -42,7 +42,7 @@ from .mapf_lorr import (
     lorr_problem_to_mapf_instance,
     mapf_result_to_lorr_solution
 )
-from .mapf_movingai import parse_map_file, MovingAIMap
+from ..movingai import parse_map_file, MovingAIMap
 
 
 # ============================================================
@@ -712,7 +712,7 @@ def verify_paths(instance: MAPFInstance, paths: List[List[int]], horizon: int) -
 
         # __init__.py
         init_py = '''"""MAPF Solver Package for LoRR Competition."""
-from .mapf_core import (
+from ..core import (
     Graph, MAPFInstance, MAPFResult, ResultStatus,
     cbs_solve, verify_paths, H, canon_json
 )
@@ -939,7 +939,7 @@ def validate_submission(
     """
     Validate a submission package against a test instance.
     """
-    from .mapf_movingai import parse_map_file
+    from ..movingai import parse_map_file
 
     # Load map and problem
     map_data = parse_map_file(map_file)

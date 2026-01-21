@@ -20,7 +20,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 import json
 from pathlib import Path
 
-from .mapf_model import (
+from .model import (
     Graph,
     MAPFInstance,
     MAPFResult,
@@ -31,8 +31,8 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_verifier import verify_paths, get_first_conflict
-from .mapf_movingai import MovingAIMap
+from .verifier import verify_paths, get_first_conflict
+from .benchmarks.movingai import MovingAIMap
 
 
 # ============================================================

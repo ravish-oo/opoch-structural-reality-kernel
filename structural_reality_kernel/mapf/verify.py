@@ -20,7 +20,7 @@ import time
 import hashlib
 import json
 
-from .mapf_model import (
+from .model import (
     Graph,
     MAPFInstance,
     Path,
@@ -44,10 +44,10 @@ from .mapf_model import (
     sha256_hex,
     H
 )
-from .mapf_verifier import verify_paths, get_first_conflict, MAPFVerifier
-from .mapf_cbs import cbs_solve, CBSSolver, forbid, low_level_astar, CBSNode
-from .mapf_ilp import ILPOracle, cross_check_cbs_ilp, HAS_PULP
-from .mapf_benchmarks import run_mandatory_benchmarks
+from .verifier import verify_paths, get_first_conflict, MAPFVerifier
+from .cbs import cbs_solve, CBSSolver, forbid, low_level_astar, CBSNode
+from .ilp import ILPOracle, cross_check_cbs_ilp, HAS_PULP
+from .benchmarks.benchmarks import run_mandatory_benchmarks
 
 
 @dataclass

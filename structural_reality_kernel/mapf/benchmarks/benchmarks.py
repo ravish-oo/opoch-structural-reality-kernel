@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 import time
 
-from .mapf_model import (
+from ..model import (
     Graph,
     MAPFInstance,
     Path,
@@ -31,9 +31,9 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_verifier import verify_paths, MAPFVerifier
-from .mapf_cbs import cbs_solve, CBSSolver
-from .mapf_ilp import ILPOracle, cross_check_cbs_ilp, HAS_PULP
+from ..verifier import verify_paths, MAPFVerifier
+from ..cbs import cbs_solve, CBSSolver
+from ..ilp import ILPOracle, cross_check_cbs_ilp, HAS_PULP
 
 
 @dataclass
@@ -535,7 +535,7 @@ def test_simple_corridor_unsat() -> BenchmarkResult:
     }
 
     # Directly check with ILP to get ground truth
-    from .mapf_ilp import ilp_feasibility_check
+    from ..ilp import ilp_feasibility_check
     ilp_result = ilp_feasibility_check(instance, horizon=10)
     cross_check = {"ilp_result": ilp_result.to_dict()}
 

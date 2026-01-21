@@ -34,26 +34,26 @@ import subprocess
 import shutil
 
 # Import our MAPF modules
-from .mapf_model import (
+from ..model import (
     Graph, MAPFInstance, MAPFResult, ResultStatus,
     Conflict, ConflictType, H, canon_json,
     create_grid_graph, pad_path_to_horizon
 )
-from .mapf_verifier import verify_paths, MAPFVerifier
-from .mapf_cbs import cbs_solve, CBSSolver
-from .mapf_ilp import ilp_feasibility_check, HAS_PULP
-from .mapf_movingai import (
+from ..verifier import verify_paths, MAPFVerifier
+from ..cbs import cbs_solve, CBSSolver
+from ..ilp import ilp_feasibility_check, HAS_PULP
+from ..movingai import (
     MovingAIMap, MovingAIScenario, ScenarioAgent,
     parse_map_file, parse_scenario_file, create_instance_from_movingai
 )
-from .mapf_planviz import (
+from ..planviz import (
     PlanVizOutput, export_to_planviz, PlanVizExporter
 )
-from .mapf_lorr import (
+from ..lorr import (
     LoRRProblem, LoRRSolution, LoRRSolver,
     mapf_result_to_lorr_solution, validate_lorr_solution
 )
-from .mapf_proof_bundle import (
+from ..proof_bundle import (
     ProofBundle, ProofBundleGenerator, generate_proof_bundle
 )
 
@@ -288,7 +288,7 @@ class PrioritizedPlanning(BaselineSolver):
         time_limit_ms: int,
         max_nodes: int
     ) -> MAPFResult:
-        from .mapf_cbs import low_level_astar, bfs_distances
+        from ..cbs import low_level_astar, bfs_distances
 
         start_time = time.time()
         paths = []

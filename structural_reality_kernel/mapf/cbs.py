@@ -22,7 +22,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 from collections import defaultdict
 import heapq
 
-from .mapf_model import (
+from .model import (
     Graph,
     MAPFInstance,
     Path,
@@ -37,7 +37,7 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_verifier import verify_paths, get_first_conflict
+from .verifier import verify_paths, get_first_conflict
 
 
 # ============================================================

@@ -16,20 +16,31 @@ from itertools import product
 import hashlib
 import json
 
-import sys
-import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from core.kernel import (
-    Test, Record, Ledger, Survivors, PiStar, Budget,
-    FeasibleTests, KernelState, compute_kernel_state
-)
-from core.theorem_generator import Contract, TheoremGenerator, KernelOutput
-from core.universe_engine import UniverseEngine
-from core.verify import VerificationSuite, ProofBundle, verify_kernel_run
-from core.receipts import ReceiptChain, CanonicalJSON
-from core.controller import PiController
-from core.nsl import NSLEngine, Distinction
+try:
+    from ..core.kernel import (
+        Test, Record, Ledger, Survivors, PiStar, Budget,
+        FeasibleTests, KernelState, compute_kernel_state
+    )
+    from ..core.theorem_generator import Contract, TheoremGenerator, KernelOutput
+    from ..core.universe_engine import UniverseEngine
+    from ..core.verify import VerificationSuite, ProofBundle, verify_kernel_run
+    from ..core.receipts import ReceiptChain, CanonicalJSON
+    from ..core.controller import PiController
+    from ..core.nsl import NSLEngine, Distinction
+except ImportError:
+    import sys
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from core.kernel import (
+        Test, Record, Ledger, Survivors, PiStar, Budget,
+        FeasibleTests, KernelState, compute_kernel_state
+    )
+    from core.theorem_generator import Contract, TheoremGenerator, KernelOutput
+    from core.universe_engine import UniverseEngine
+    from core.verify import VerificationSuite, ProofBundle, verify_kernel_run
+    from core.receipts import ReceiptChain, CanonicalJSON
+    from core.controller import PiController
+    from core.nsl import NSLEngine, Distinction
 
 
 @dataclass(frozen=True)

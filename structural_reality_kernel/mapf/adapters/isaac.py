@@ -25,7 +25,7 @@ import json
 import math
 from pathlib import Path
 
-from .mapf_model import (
+from ..model import (
     Graph,
     MAPFInstance,
     MAPFResult,

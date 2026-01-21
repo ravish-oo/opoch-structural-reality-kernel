@@ -16,11 +16,14 @@ from enum import Enum
 import hashlib
 import json
 
-import sys
-import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from core.receipts import CanonicalJSON
+try:
+    from ..core.receipts import CanonicalJSON
+except ImportError:
+    # Fallback for direct execution
+    import sys
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from core.receipts import CanonicalJSON
 
 
 # ============================================================

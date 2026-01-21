@@ -18,7 +18,7 @@ On FAIL, returns minimal conflict witness (τ* in kernel terms).
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
-from .mapf_model import (
+from .model import (
     Graph,
     MAPFInstance,
     Path,

@@ -5,18 +5,18 @@ Simple MAPF Example
 Demonstrates the quotient collapse solving a 4-agent MAPF instance.
 
 Usage:
-    python examples/mapf_simple.py
+    python -m structural_reality_kernel.mapf.examples.simple
 """
 
 import sys
 import os
 
-# Add parent directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add parent directory to path for standalone execution
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 
-from empirical_evidences.mapf_model import MAPFInstance, create_grid_graph
-from empirical_evidences.mapf_cbs import CBSSolver
-from empirical_evidences.mapf_verifier import verify_paths
+from structural_reality_kernel.mapf.model import MAPFInstance, create_grid_graph
+from structural_reality_kernel.mapf.cbs import CBSSolver
+from structural_reality_kernel.mapf.verifier import verify_paths
 
 
 def main():

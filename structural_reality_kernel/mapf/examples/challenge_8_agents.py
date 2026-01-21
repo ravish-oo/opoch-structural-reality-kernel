@@ -6,7 +6,7 @@ Demonstrates solving the 12x12 grid with 8 agents - the "trillion dollar" proble
 Shows the full power of quotient collapse: 184 quadrillion states → 2,516 nodes.
 
 Usage:
-    python examples/mapf_8_agents.py
+    python -m structural_reality_kernel.mapf.examples.challenge_8_agents
 """
 
 import sys
@@ -14,12 +14,12 @@ import os
 import math
 import time
 
-# Add parent directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add parent directory to path for standalone execution
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 
-from empirical_evidences.mapf_model import MAPFInstance, create_grid_graph
-from empirical_evidences.mapf_cbs import CBSSolver
-from empirical_evidences.mapf_verifier import verify_paths
+from structural_reality_kernel.mapf.model import MAPFInstance, create_grid_graph
+from structural_reality_kernel.mapf.cbs import CBSSolver
+from structural_reality_kernel.mapf.verifier import verify_paths
 
 
 def format_large_number(n):

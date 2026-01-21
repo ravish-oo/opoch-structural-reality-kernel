@@ -12,31 +12,31 @@ MAPF is the problem of finding collision-free paths for multiple agents from the
 
 ```bash
 # From repository root
-python -m structural_reality_kernel.demos.mapf
+python -m structural_reality_kernel.mapf.examples.simple
 
-# Or directly
-python demos/mapf.py
+# Full 8-agent challenge
+python -m structural_reality_kernel.mapf.examples.challenge_8_agents
 ```
 
 ### 2. Visualize a Solution
 
 ```bash
-cd empirical_evidences/gazebo_simulation
+cd structural_reality_kernel/mapf/simulation
 
 # Verify solution and show stats
-python scripts/standalone_simulation.py --config config --verify --stats
+python scripts/standalone_simulation.py --verify --stats
 
 # Run animation
-python scripts/standalone_simulation.py --config config
+python scripts/standalone_simulation.py
 
 # Save as GIF
-python scripts/standalone_simulation.py --config config --save solution.gif
+python scripts/standalone_simulation.py --save solution.gif
 ```
 
 ### 3. Run Benchmarks
 
 ```bash
-cd empirical_evidences
+cd structural_reality_kernel/mapf/benchmarks
 ./run_benchmarks.sh --quick
 ```
 
@@ -45,15 +45,19 @@ cd empirical_evidences
 ### Core Files
 
 ```
-empirical_evidences/
-├── mapf_model.py          # Data structures (Graph, Instance, Path, Conflict)
-├── mapf_cbs.py            # CBS solver (quotient collapse algorithm)
-├── mapf_verifier.py       # V1-V5 verification
-├── mapf_planviz.py        # Visualization and video generation
-├── mapf_ilp.py            # ILP cross-validation
-├── mapf_benchmarks.py     # Benchmark framework
-├── mapf_proof_bundle.py   # Cryptographic proof bundles
-└── gazebo_simulation/     # ROS2/Gazebo simulation
+mapf/
+├── model.py               # Data structures (Graph, Instance, Path, Conflict)
+├── cbs.py                 # CBS solver (quotient collapse algorithm)
+├── verifier.py            # V1-V5 verification
+├── planviz.py             # Visualization and video generation
+├── ilp.py                 # ILP cross-validation
+├── verify.py              # Complete verification suite
+├── proof_bundle.py        # Cryptographic proof bundles
+├── benchmarks/            # Benchmark framework
+├── adapters/              # ROS2, Unity, Isaac adapters
+├── simulation/            # Gazebo simulation
+├── visualizations/        # Sample visualizations
+└── examples/              # Runnable demos
 ```
 
 ### Data Flow
@@ -73,7 +77,7 @@ Instance → CBS Solver → Paths → Verifier → Result
 ### Creating an Instance
 
 ```python
-from empirical_evidences.mapf_model import MAPFInstance, create_grid_graph
+from structural_reality_kernel.mapf.model import MAPFInstance, create_grid_graph
 
 # Create a 12x12 grid
 graph = create_grid_graph(12, 12)
@@ -92,7 +96,7 @@ instance = MAPFInstance(
 ### Solving
 
 ```python
-from empirical_evidences.mapf_cbs import CBSSolver
+from structural_reality_kernel.mapf.cbs import CBSSolver
 
 solver = CBSSolver(
     instance=instance,
@@ -114,7 +118,7 @@ else:
 ### Verification
 
 ```python
-from empirical_evidences.mapf_verifier import verify_paths
+from structural_reality_kernel.mapf.verifier import verify_paths
 
 # Verify independently
 T = max(len(p) - 1 for p in result.paths)
@@ -130,7 +134,7 @@ else:
 ### Visualization
 
 ```python
-from empirical_evidences.mapf_planviz import (
+from structural_reality_kernel.mapf.planviz import (
     MAPFToPlanViz,
     PlanVizVideoRenderer,
     quick_visualize
@@ -197,12 +201,12 @@ result.gap      # What limit hit
 result.frontier # Last known state
 ```
 
-## Gazebo Simulation
+## Simulation
 
 ### Prerequisites
 
 ```bash
-# ROS2 Humble
+# ROS2 Humble (optional, for full simulation)
 sudo apt install ros-humble-desktop
 sudo apt install ros-humble-gazebo-ros-pkgs
 sudo apt install ros-humble-turtlebot3*
@@ -214,10 +218,10 @@ pip install numpy pyyaml matplotlib pillow
 ### Running
 
 ```bash
-cd empirical_evidences/gazebo_simulation
+cd structural_reality_kernel/mapf/simulation
 
 # Option 1: Standalone (no ROS2)
-python scripts/standalone_simulation.py --config config
+python scripts/standalone_simulation.py
 
 # Option 2: Full ROS2/Gazebo
 source /opt/ros/humble/setup.bash
@@ -236,7 +240,7 @@ ros2 run mapf_simulation safety_monitor.py
 ### Configuration Files
 
 ```
-gazebo_simulation/
+simulation/
 ├── config/
 │   ├── robots.yaml         # Robot positions and goals
 │   └── mapf_solution.json  # Pre-computed CBS solution
@@ -256,17 +260,17 @@ gazebo_simulation/
 
 | Instance | Grid | Agents | Naive Space | CBS Nodes | Compression |
 |----------|------|--------|-------------|-----------|-------------|
-| Small | 5×5 | 2 | 625 | 2 | 10^2.5 |
-| Medium | 8×8 | 4 | 16M | 23 | 10^5.9 |
-| Large | 10×10 | 6 | 1T | 39 | 10^10.4 |
-| Challenge | 12×12 | 8 | 185Q | 2,516 | 10^13.9 |
+| Small | 5x5 | 2 | 625 | 2 | 10^2.5 |
+| Medium | 8x8 | 4 | 16M | 23 | 10^5.9 |
+| Large | 10x10 | 6 | 1T | 39 | 10^10.4 |
+| Challenge | 12x12 | 8 | 185Q | 2,516 | 10^13.9 |
 
 ### Key Metrics
 
 ```
 Total Naive Space:     184,885,258,911,814,272 states
 Total CBS Explored:    2,580 states
-Overall Compression:   71,660,953,066,595×
+Overall Compression:   71,660,953,066,595x
 Log10 Compression:     10^13.9
 ```
 
