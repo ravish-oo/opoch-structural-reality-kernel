@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 import time
 
-from .mapf_model import (
+from ..model import (
     Graph,
     MAPFInstance,
     Path,
@@ -31,8 +31,8 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_verifier import verify_paths, MAPFVerifier
-from .mapf_cbs import cbs_solve, CBSSolver
+from ..verifier import verify_paths, MAPFVerifier
+from ..cbs import cbs_solve, CBSSolver
 from .mapf_ilp import ILPOracle, cross_check_cbs_ilp, HAS_PULP
 
 

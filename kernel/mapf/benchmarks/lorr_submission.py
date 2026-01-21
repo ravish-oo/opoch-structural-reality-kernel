@@ -23,15 +23,15 @@ import time
 import hashlib
 from datetime import datetime
 
-from .mapf_model import (
+from ..model import (
     MAPFInstance,
     MAPFResult,
     ResultStatus,
     H,
     canon_json
 )
-from .mapf_cbs import cbs_solve
-from .mapf_verifier import verify_paths
+from ..cbs import cbs_solve
+from ..verifier import verify_paths
 from .mapf_lorr import (
     LoRRProblem,
     LoRRSolution,

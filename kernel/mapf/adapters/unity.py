@@ -25,7 +25,7 @@ from pathlib import Path
 import struct
 import time
 
-from .mapf_model import (
+from ..model import (
     Graph,
     MAPFInstance,
     MAPFResult,

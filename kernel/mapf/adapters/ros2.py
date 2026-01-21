@@ -20,7 +20,7 @@ import json
 import math
 from pathlib import Path
 
-from .mapf_model import (
+from ..model import (
     Graph,
     MAPFInstance,
     MAPFResult,
@@ -29,7 +29,7 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_movingai import MovingAIMap
+from ..benchmarks.movingai import MovingAIMap
 
 
 # ============================================================

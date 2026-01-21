@@ -22,7 +22,7 @@ from pathlib import Path
 import json
 import time
 
-from .mapf_model import (
+from ..model import (
     Graph,
     MAPFInstance,
     MAPFResult,
@@ -30,8 +30,8 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_cbs import cbs_solve
-from .mapf_verifier import verify_paths
+from ..cbs import cbs_solve
+from ..verifier import verify_paths
 from .mapf_movingai import MovingAIMap, parse_map_file
 
 

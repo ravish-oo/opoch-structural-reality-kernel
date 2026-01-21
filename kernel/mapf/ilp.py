@@ -26,7 +26,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Set, Tuple
 from collections import defaultdict
 
-from .mapf_model import (
+from .model import (
     Graph,
     MAPFInstance,
     Path,
@@ -38,7 +38,7 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_verifier import verify_paths
+from .verifier import verify_paths
 
 # Try to import PuLP for ILP solving
 try:

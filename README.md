@@ -1,176 +1,166 @@
-# Opoch - Technical Consulting Platform
+# Opoch - Structural Reality Kernel
 
-Get unstuck. Build faster. Decide with confidence.
+A mathematical framework for solving NP-hard problems through **quotient collapse** - the principle that reality is defined by the equivalence classes of indistinguishability.
 
-## Overview
+## Repository Structure
 
-Opoch is a modern technical consulting platform built with React, TypeScript, and Vite. It features a moonshots catalog, lead capture system, email automation, and comprehensive analytics.
-
-## Features
-
-- 🚀 **Moonshots Catalog**: Browse ambitious technical challenges
-- 📧 **Email System**: Automated email templates with Resend integration
-- 🔐 **Authentication**: Google and GitHub SSO via Supabase Auth
-- 📊 **Analytics**: Vercel Analytics and custom event tracking
-- ⚡ **Performance**: Lazy loading, PWA support, and optimized assets
-- 🛡️ **Security**: CSP, security headers, and best practices
-
-## Tech Stack
-
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, Framer Motion
-- **Database**: Supabase (PostgreSQL)
-- **Email**: Resend
-- **Deployment**: Vercel
-- **Analytics**: Vercel Analytics & Speed Insights
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 20.9+ (we use 20.19.4 LTS)
-- npm 10+
-- Supabase account
-- Resend account (for emails)
-- Vercel account (for deployment)
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/opoch/website.git
-cd opoch
+```
+opoch-structural-reality-kernel/
+├── kernel/                      # Structural Reality Kernel (Python)
+│   ├── core/                   # Foundational kernel primitives
+│   ├── mapf/                   # Multi-Agent Path Finding module
+│   │   ├── model.py           # Data structures
+│   │   ├── cbs.py             # CBS solver
+│   │   ├── verifier.py        # V1-V5 verification
+│   │   ├── benchmarks/        # Benchmark framework
+│   │   ├── adapters/          # ROS2, Unity, Isaac adapters
+│   │   ├── simulation/        # Gazebo simulation
+│   │   └── examples/          # Runnable demos
+│   ├── empirical_evidences/    # Domain implementations
+│   │   ├── physics/           # Quantum, space, time, energy
+│   │   ├── logic/             # Computation, complexity, Godel
+│   │   ├── mind/              # Consciousness, intelligence
+│   │   ├── applications/      # Biotech, climate, finance
+│   │   └── verification/      # All verification tests
+│   └── demos/                  # Core kernel demos
+│
+├── website/                     # Opoch Website (React/TypeScript)
+│   ├── src/                    # React components
+│   ├── public/                 # Static assets
+│   └── package.json            # Dependencies
+│
+├── api/                         # Backend API (Vercel serverless)
+│
+├── demos/                       # Standalone Python demos
+│   ├── apple_puzzles_kernel_demo.py
+│   ├── consciousness_demo.py
+│   ├── mapf_kernel_demo.py
+│   └── ...
+│
+├── docs/                        # All documentation
+│   ├── theory_of_everything.pdf
+│   ├── brand/                  # Branding assets
+│   └── website/                # Website documentation
+│
+├── tools/                       # Development tools
+│   ├── mcp/                    # MCP integrations
+│   ├── scripts/                # Utility scripts
+│   └── supabase/               # Database schemas
+│
+└── archive/                     # Archived code
 ```
 
-2. Set up Node version (using nvm):
+## Core Insight
+
+> **Axiom A0:** If two states are indistinguishable under ALL available tests, they MUST be identified.
+
+This single axiom, rigorously applied, collapses exponential search spaces into tractable computations.
+
+## Key Results
+
+| Problem | Naive Space | Explored | Compression | Verification |
+|---------|-------------|----------|-------------|--------------|
+| MAPF 12×12, 8 agents | 184 quadrillion | 2,500 | 10^13.9 | V1-V5 PASS |
+
+**TrustGain: ∞** (zero silent failures via mathematical verification)
+
+## Quick Start
+
+### Run MAPF Demo
+
 ```bash
-nvm install
-nvm use
+# From repository root
+cd kernel
+python -m mapf.examples.simple
+
+# Full 8-agent challenge
+python -m mapf.examples.challenge_8_agents
 ```
 
-3. Install dependencies:
+### Run Website
+
 ```bash
+cd website
 npm install
-```
-
-4. Copy environment variables:
-```bash
-cp .env.example .env.local
-```
-
-5. Configure environment variables in `.env.local`
-
-6. Set up Supabase:
-   - Create a new project
-   - Run the SQL schemas in order:
-     - `supabase/schema.sql`
-     - `supabase/schema_phase3.sql`
-     - `supabase/fix_backend.sql` (for email templates and RLS policies)
-
-7. Start development server:
-```bash
 npm run dev
 ```
 
-## Development
+## Mathematical Foundation
 
-### Available Scripts
+### The Three Axioms
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm test` - Run tests
-- `npm run lint` - Run ESLint
-
-### Project Structure
-
+**A0: Indistinguishability → Identification**
 ```
-opoch/
-├── api/                 # Vercel serverless functions
-├── docs/               # Documentation
-├── public/             # Static assets
-├── scripts/            # Build and deployment scripts
-├── src/
-│   ├── components/     # React components
-│   ├── contexts/       # React contexts
-│   ├── data/          # Static data
-│   ├── lib/           # Utilities
-│   └── pages/         # Page components
-└── supabase/          # Database schemas
+x ~_Δ y ⟺ ∀τ ∈ Δ, τ(x) = τ(y)  →  x ≡ y in Q_Δ
 ```
 
-## Deployment
+**A1: Budget-Feasibility**
+```
+Feasible tests: Δ(L) = {τ : cost(τ) ≤ Budget(L)}
+```
 
-### Automatic Deployment
+**A2: Totality Discipline**
+```
+Every test τ: D₀ → A is total (PASS, FAIL, or TIMEOUT)
+```
 
-Push to `main` branch triggers automatic deployment via GitHub Actions.
+### Output Contract
 
-### Manual Deployment
+```
+UNIQUE    → Solution found + cryptographic receipt
+UNSAT     → Proven impossible + certificate
+OMEGA_GAP → Honest uncertainty + frontier witness
+```
 
+## MAPF Implementation
+
+### V1-V5 Truth Gate
+
+| Gate | Check |
+|------|-------|
+| V1 | All agents at correct start |
+| V2 | All agents reach goal |
+| V3 | All moves valid |
+| V4 | No vertex conflicts |
+| V5 | No edge conflicts |
+
+### Compression Result
+
+```
+Naive space:   144^8 = 1.85 × 10^17 (184 quadrillion)
+CBS explored:  ~2,500 nodes
+Compression:   10^13.9 (73 trillion times fewer)
+```
+
+## Requirements
+
+### Kernel (Python)
 ```bash
-# Preview deployment
-./scripts/deploy.sh preview
+python >= 3.8
 
-# Production deployment
-./scripts/deploy.sh production
+# Optional for visualization
+pip install matplotlib pillow
+
+# Optional for benchmarks
+pip install numpy pyyaml
 ```
 
-### Security Audit
-
-Run security checks before deployment:
+### Website (Node.js)
 ```bash
-./scripts/security-check.sh
+node >= 20.9
+npm >= 10
 ```
 
-## Environment Variables
+## Documentation
 
-### Client-side (VITE_ prefix)
-- `VITE_SUPABASE_URL` - Supabase project URL
-- `VITE_SUPABASE_ANON_KEY` - Supabase anonymous key
-
-### Server-side (Vercel)
-- `SUPABASE_SERVICE_ROLE_KEY` - Supabase service role key
-- `RESEND_API_KEY` - Resend API key
-
-## Security Best Practices
-
-### Environment Variables
-- **NEVER** commit `.env.local` or any file containing real API keys
-- `.env.local` is already in `.gitignore` - keep it that way
-- Use `.env.example` as a template with placeholder values only
-- Only `VITE_` prefixed variables are exposed to the client
-- Keep `SERVICE_ROLE_KEY` secure - it has admin database privileges
-
-### API Keys
-- Regularly rotate API keys
-- Use environment-specific keys (dev/staging/prod)
-- Monitor API key usage for anomalies
-- Immediately revoke compromised keys
-
-### Before Committing
-1. Check that no secrets are in your code: `git diff --staged`
-2. Ensure `.env.local` is not staged: `git status`
-3. Review `.env.example` contains only placeholders
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## Security
-
-- All API endpoints require authentication
-- CSP headers prevent XSS attacks
-- Security headers configured in `vercel.json`
-- Regular dependency updates via Dependabot
+- [Mathematical Theory](kernel/docs/THEORY.md) - Complete axiom system
+- [MAPF Guide](kernel/mapf/GUIDE.md) - MAPF implementation details
+- [Benchmark Results](kernel/mapf/BENCHMARK_RESULTS.md) - Performance metrics
 
 ## License
 
-Private and confidential. All rights reserved.
+MIT License - See [kernel/LICENSE](kernel/LICENSE)
 
-## Support
+## Security
 
-For support, email hello@opoch.com or visit our [documentation](https://docs.opoch.com).
+See [SECURITY.md](SECURITY.md) for security policies.

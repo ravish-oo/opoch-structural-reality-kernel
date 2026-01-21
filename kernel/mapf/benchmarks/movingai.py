@@ -19,7 +19,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 from pathlib import Path
 import os
 
-from .mapf_model import (
+from ..model import (
     Graph,
     MAPFInstance,
     MAPFResult,

@@ -36,7 +36,7 @@ from datetime import datetime, timezone
 import base64
 import io
 
-from .mapf_model import (
+from .model import (
     Graph,
     MAPFInstance,
     MAPFResult,
@@ -47,7 +47,7 @@ from .mapf_model import (
     H,
     canon_json
 )
-from .mapf_verifier import verify_paths
+from .verifier import verify_paths
 
 
 # ============================================================
