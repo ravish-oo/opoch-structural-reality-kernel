@@ -1,0 +1,2 @@
+[console_scripts]
+srk = structural_reality_kernel.__main__:main

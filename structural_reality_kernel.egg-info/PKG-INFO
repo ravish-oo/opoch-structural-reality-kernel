@@ -1,0 +1,121 @@
+Metadata-Version: 2.4
+Name: structural-reality-kernel
+Version: 1.0.0
+Summary: The complete ⊥ → ⊥op universe kernel implementation
+Author-email: Opoch <hello@opoch.com>
+License: MIT
+Project-URL: Homepage, https://github.com/opoch/opoch-structural-reality-kernel
+Project-URL: Documentation, https://opoch.com/docs
+Project-URL: Repository, https://github.com/opoch/opoch-structural-reality-kernel
+Keywords: verification,formal-methods,theorem-proving,kernel,physics
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0; extra == "dev"
+Requires-Dist: mypy>=1.0; extra == "dev"
+
+# Structural Reality Kernel
+
+The complete ⊥ → ⊥op universe kernel implementation.
+
+A self-contained system that:
+- Starts from nothing (⊥)
+- Evolves through witnessable tests
+- Reaches operational nothingness (⊥op)
+- Generates theorems and proofs
+
+All outputs are deterministic, gauge-invariant, and verifiable. No floats in receipts - integers and ratios only.
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+### CLI
+
+```bash
+# Run core verification
+python -m structural_reality_kernel verify
+
+# Run specific demo
+python -m structural_reality_kernel demo np_sat
+python -m structural_reality_kernel demo mapf
+python -m structural_reality_kernel demo quantum_gns
+python -m structural_reality_kernel demo gravity
+
+# Run all verifications and demos
+python -m structural_reality_kernel all
+```
+
+### As a library
+
+```python
+from structural_reality_kernel import (
+    Ledger, Test, Record, Survivors, PiStar,
+    Budget, TimeWitness, EnergyLedger,
+    UniverseEngine, TheoremGenerator
+)
+
+# Create a test
+def parity_test(x: int) -> str:
+    return "EVEN" if x % 2 == 0 else "ODD"
+
+test = Test(
+    test_id="parity",
+    evaluator=parity_test,
+    cost=1,
+    outcome_space=frozenset(["EVEN", "ODD"])
+)
+
+# Build a ledger
+ledger = Ledger()
+record = Record(test_id="parity", outcome="EVEN")
+ledger = ledger.append(record)
+```
+
+## Package Structure
+
+```
+structural_reality_kernel/
+├── core/                    # Kernel primitives
+│   ├── kernel.py           # Ledger, Survivors, PiStar, Budget
+│   ├── universe_engine.py  # Core update engine
+│   ├── verify.py           # Verification suite
+│   ├── theorem_generator.py # Contract-based theorems
+│   ├── controller.py       # Pi-controller
+│   ├── nsl.py              # Nonstandard Logic
+│   ├── gauge.py            # Canonicalization
+│   └── receipts.py         # Receipt generation
+├── empirical_evidences/    # Verification modules (56 files)
+│   ├── paradox_verify.py   # Liar, Russell, Berry resolution
+│   ├── godel_verify.py     # Gödel incompleteness
+│   ├── quantum.py          # Quantum mechanics
+│   └── ...
+└── demos/                  # Demo applications
+    ├── np_sat.py           # NP-SAT verification
+    ├── mapf.py             # Multi-agent pathfinding
+    ├── quantum_gns.py      # Quantum GNS construction
+    └── gravity_cost_geometry.py
+```
+
+## Documentation
+
+See the full documentation at [opoch.com/docs](https://opoch.com/docs).
+
+## License
+
+MIT

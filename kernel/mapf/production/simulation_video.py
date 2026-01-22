@@ -293,7 +293,8 @@ def create_frame(config: SimulationConfig,
 
     # Convert to image
     fig.canvas.draw()
-    image = Image.frombytes('RGB', fig.canvas.get_width_height(), fig.canvas.tostring_rgb())
+    image = Image.frombytes('RGBA', fig.canvas.get_width_height(), fig.canvas.buffer_rgba())
+    image = image.convert('RGB')
     plt.close(fig)
 
     return image

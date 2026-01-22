@@ -51,3 +51,11 @@ vite.config.ts.timestamp-*
 .vercel
 # Large generated files
 kernel/mapf/production/mapf_400_simulation.gif
+
+# Virtual environment
+venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
