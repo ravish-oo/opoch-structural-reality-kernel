@@ -49,3 +49,5 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vercel/
 .vercel
+# Large generated files
+kernel/mapf/production/mapf_400_simulation.gif
