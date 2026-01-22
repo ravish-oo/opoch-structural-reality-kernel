@@ -2,22 +2,17 @@
 
 A mathematical framework for solving NP-hard problems through **quotient collapse** - the principle that reality is defined by the equivalence classes of indistinguishability.
 
-## 🚀 NEW: 10,000-Robot Transport Fabric
+## MAPF Module
 
-![10K Robots Demo](output/opoch_10k_full.gif)
+**The MAPF (Multi-Agent Path Finding) module has been moved to its own repository:**
 
-**Civilizational-scale multi-agent coordination with mathematical guarantees.**
+**https://github.com/chetannothingness/MAPF**
 
-| Metric | Value | Industry Comparison |
-|--------|-------|---------------------|
-| **Robots Coordinated** | 10,000 in ONE system | Industry: 100-500 per zone |
-| **Real-time Rate** | 31.5 Hz | Academic MAPF: offline only |
-| **Decisions/Year** | 9.9 TRILLION | All collision-free |
-| **Collision Rate** | 0.000% (proven) | Industry: ~1 per 100K robot-hours |
-
-**The secret**: We don't *avoid* collisions. We make them **undefined**. A permutation (bijection) cannot have two robots at the same location - it's a type error, not a bug.
-
-→ [Full Transport Fabric Documentation](kernel/mapf/fabric/README.md)
+Features:
+- 10,000-robot Transport Fabric at 31.5 Hz
+- 400-robot Production Scale demos
+- CBS solver with V1-V5 verification
+- Mathematical collision impossibility guarantee
 
 ---
 
@@ -27,20 +22,6 @@ A mathematical framework for solving NP-hard problems through **quotient collaps
 opoch-structural-reality-kernel/
 ├── kernel/                      # Structural Reality Kernel (Python)
 │   ├── core/                   # Foundational kernel primitives
-│   ├── mapf/                   # Multi-Agent Path Finding module
-│   │   ├── fabric/            # 🆕 10K-robot Transport Fabric
-│   │   │   ├── warehouse_graph.py
-│   │   │   ├── fabric_compiler.py
-│   │   │   ├── incremental_matching.py
-│   │   │   ├── controller.py
-│   │   │   └── permutation_executor.py
-│   │   ├── model.py           # Data structures
-│   │   ├── cbs.py             # CBS solver
-│   │   ├── verifier.py        # V1-V5 verification
-│   │   ├── benchmarks/        # Benchmark framework
-│   │   ├── adapters/          # ROS2, Unity, Isaac adapters
-│   │   ├── simulation/        # Gazebo simulation
-│   │   └── examples/          # Runnable demos
 │   ├── empirical_evidences/    # Domain implementations
 │   │   ├── physics/           # Quantum, space, time, energy
 │   │   ├── logic/             # Computation, complexity, Godel
@@ -59,7 +40,6 @@ opoch-structural-reality-kernel/
 ├── demos/                       # Standalone Python demos
 │   ├── apple_puzzles_kernel_demo.py
 │   ├── consciousness_demo.py
-│   ├── mapf_kernel_demo.py
 │   └── ...
 │
 ├── docs/                        # All documentation
@@ -80,36 +60,6 @@ opoch-structural-reality-kernel/
 > **Axiom A0:** If two states are indistinguishable under ALL available tests, they MUST be identified.
 
 This single axiom, rigorously applied, collapses exponential search spaces into tractable computations.
-
-## Key Results
-
-| Problem | Scale | Performance | Guarantee |
-|---------|-------|-------------|-----------|
-| **Transport Fabric** | 10,000 robots | 31.5 Hz real-time | 0 collisions (proven) |
-| MAPF 12×12, 8 agents | 184 quadrillion states | 2,500 explored | 10^13.9 compression |
-
-**TrustGain: ∞** (zero silent failures via mathematical verification)
-
-## Quick Start
-
-### Run MAPF Demo
-
-```bash
-# From repository root
-cd kernel
-python -m mapf.examples.simple
-
-# Full 8-agent challenge
-python -m mapf.examples.challenge_8_agents
-```
-
-### Run Website
-
-```bash
-cd website
-npm install
-npm run dev
-```
 
 ## Mathematical Foundation
 
@@ -138,24 +88,16 @@ UNSAT     → Proven impossible + certificate
 OMEGA_GAP → Honest uncertainty + frontier witness
 ```
 
-## MAPF Implementation
+**TrustGain: ∞** (zero silent failures via mathematical verification)
 
-### V1-V5 Truth Gate
+## Quick Start
 
-| Gate | Check |
-|------|-------|
-| V1 | All agents at correct start |
-| V2 | All agents reach goal |
-| V3 | All moves valid |
-| V4 | No vertex conflicts |
-| V5 | No edge conflicts |
+### Run Website
 
-### Compression Result
-
-```
-Naive space:   144^8 = 1.85 × 10^17 (184 quadrillion)
-CBS explored:  ~2,500 nodes
-Compression:   10^13.9 (73 trillion times fewer)
+```bash
+cd website
+npm install
+npm run dev
 ```
 
 ## Requirements
@@ -163,12 +105,6 @@ Compression:   10^13.9 (73 trillion times fewer)
 ### Kernel (Python)
 ```bash
 python >= 3.8
-
-# Optional for visualization
-pip install matplotlib pillow
-
-# Optional for benchmarks
-pip install numpy pyyaml
 ```
 
 ### Website (Node.js)
@@ -177,11 +113,13 @@ node >= 20.9
 npm >= 10
 ```
 
+## Related Repositories
+
+- **[MAPF](https://github.com/chetannothingness/MAPF)** - Multi-Agent Path Finding (10K robots)
+
 ## Documentation
 
 - [Mathematical Theory](kernel/docs/THEORY.md) - Complete axiom system
-- [MAPF Guide](kernel/mapf/GUIDE.md) - MAPF implementation details
-- [Benchmark Results](kernel/mapf/BENCHMARK_RESULTS.md) - Performance metrics
 
 ## License
 
